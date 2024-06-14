@@ -180,7 +180,7 @@ fun UnitConverter(){
             Spacer(modifier = Modifier.width(16.dp))
             //Swapping Box
             Box {
-                    Button(onClick = {
+                    IconButton(onClick = {
                         val temp1 = inputUnit
                         inputUnit = outputUnit
                         outputUnit = temp1
@@ -188,15 +188,19 @@ fun UnitConverter(){
                         conversionFactor.value = oConversionFactor.value
                         oConversionFactor.value = temp2
                         convertUnits()
-
                     }) {
-                        Icon(
-                            Icons.Default.ArrowBack,
-                            contentDescription = "Arrow Forward",
-                        )
-                        Icon(
-                            Icons.Default.ArrowForward,
-                            contentDescription = "")
+                        Column {
+                            Icon(
+                                imageVector = Icons.Default.ArrowBack,
+                                contentDescription = "Arrow Back",
+                                modifier = Modifier.width(16.dp)
+                            )
+                            Icon(
+                                imageVector = Icons.Default.ArrowForward,
+                                contentDescription = "Arrow Forward",
+                                modifier = Modifier.width(16.dp)
+                            )
+                        }
                     }
             }
             Spacer(modifier = Modifier.width(16.dp))
